@@ -40,8 +40,8 @@ const MORSE_TABLE = {
 
     function decode(expr) {
         let words = '';
-        for(let i = 0; i < words.length; i+=10){
-            const word = words.slice(i,i+10);
+        for(let i = 0; i < expr.length; i+=10){
+            const word = expr.slice(i,i+10);
             if (word == '**********') {
                 words += ' ';
                 continue;        
@@ -52,10 +52,10 @@ const MORSE_TABLE = {
                     case '10':
                         symbol_code += '.';
                         break;
-                        case '11':
+                    case '11':
                         symbol_code += '-';
                         break;
-                        default:
+                    default:
                         break;
                 }
             }
